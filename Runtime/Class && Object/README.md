@@ -11,13 +11,13 @@
 ```c
 struct objc_object {
   private:
-  		isa_t isa;
+  	isa_t isa;
   public:
-  		//function here
+  	//function here
 }
 ```
 
-**objc_object**结构体是定义在`objc-private.h` 该结构体只有一个isa指针 但这个指针可以找到对象所属的类 可是由于它是由isa_t 使用union实现 所以俄能表示多种形态 既可以当成指针 也可以存储标志位  
+**objc_object**结构体是定义在`objc-private.h` 该结构体只有一个isa指针 但这个指针可以找到对象所属的类 可是由于它是由isa_t 使用union实现 所以也能表示多种形态 既可以当成指针 也可以存储标志位  
 
 注意: isa指针不总是指向实例对象所属的类，所以不能依靠它确定类型,而是用`class`方法来确定实力对象的类 例子:kvo的实质就是将被观察对象的isa指针指向一个中间类而不是原本的类 叫**isa-swizzling**  可见[官方文档]()
 
@@ -187,7 +187,7 @@ struct objc_class : objc_object {
 
 不过 对于类来说 由于它也是继承**objc_object** 所以它也是一个对象
 
-对于这种关系runtime库创建了一个叫做元类(meta class) 类对象所属类型就叫做元类
+对于这种关系runtime库创建了一个叫做元类(meta class)   类对象所属类型就叫做元类
 
 它用来表述**类对象**本身所具备的**元数据** **类方法**也就是**定义在元类当中** 可以理解成为是**类对象的实例方法**
 
