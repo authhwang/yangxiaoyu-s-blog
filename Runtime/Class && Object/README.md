@@ -19,7 +19,7 @@ struct objc_object {
 
 **objc_object**结构体是定义在`objc-private.h` 该结构体只有一个isa指针 但这个指针可以找到对象所属的类 可是由于它是由isa_t 使用union实现 所以也能表示多种形态 既可以当成指针 也可以存储标志位  
 
-注意: isa指针不总是指向实例对象所属的类，所以不能依靠它确定类型,而是用`class`方法来确定实力对象的类 例子:kvo的实质就是将被观察对象的isa指针指向一个中间类而不是原本的类 叫**isa-swizzling**  可见[官方文档]()
+注意: isa指针不总是指向实例对象所属的类，所以不能依靠它确定类型,而是用`class`方法来确定实力对象的类 例子:kvo的实质就是将被观察对象的isa指针指向一个中间类而不是原本的类 叫**isa-swizzling**  可见[官方文档](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOImplementation.html)
 
 ## isa_t 
 
