@@ -1,6 +1,6 @@
 # 属性与方法
 
-在前面的[类和对象]()中 我们了解到objc_object中的isa指针在不同情况会有不同的指向 的情况 所以在这片文章中 我们继续探讨objc_class的另一个指针bits
+在前面的[类和对象](https://github.com/authhwang/yangxiaoyu-s-blog/tree/master/Runtime/Class%20%26%26%20Object)中 我们了解到objc_object中的isa指针在不同情况会有不同的指向 的情况 所以在这片文章中 我们继续探讨objc_class的另一个指针bits
 
 关键点: 
 
